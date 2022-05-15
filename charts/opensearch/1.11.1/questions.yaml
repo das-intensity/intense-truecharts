@@ -3,22 +3,6 @@ groups:
     description: "Image to be used for container"
 
 questions:
-## Portal Button
-  - variable: portal
-    group: "Container Image"
-    label: "Configure Portal Button"
-    schema:
-      type: dict
-      hidden: true
-      attrs:
-        - variable: enabled
-          label: "Enable"
-          description: "enable the portal button"
-          schema:
-            hidden: true
-            editable: false
-            type: boolean
-            default: true
 ## Update Policy
   - variable: strategyType
     group: "Container Image"

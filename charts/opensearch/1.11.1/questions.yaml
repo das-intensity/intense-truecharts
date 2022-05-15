@@ -1,6 +1,8 @@
 groups:
   - name: "Container Image"
     description: "Image to be used for container"
+  - name: "OpenSearch Configuration"
+    description: "Configuring OpenSearch"
 
 questions:
 ## Update Policy

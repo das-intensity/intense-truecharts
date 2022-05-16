@@ -11,34 +11,67 @@ questions:
     label: "Update Strategy"
     schema:
       type: string
-      default: "Recreate"
+      default: "RollingUpdate"
       enum:
         - value: "RollingUpdate"
           description: "Create new pods and then kill old ones"
         - value: "Recreate"
           description: "Kill existing pods before creating new ones"
 
-#  - variable: service
-#    description: "OpenSearch Service Configuration"
-#    label: "OpenSearch Service Configuration"
-#    group: "OpenSearch Configuration"
-#    schema:
-#      type: dict
-#      required: true
-#      attrs:
-#        - variable: nodePort
-#          label: "Node Port to use for OpenSearch API"
-#          schema:
-#            type: int
-#            min: 9000
-#            max: 65535
-#            default: 9200
-#            required: true
-#        - variable: nodePort
-#          label: "Node Port to use for OpenSearch API"
-#          schema:
-#            type: int
-#            min: 9000
-#            max: 65535
-#            default: 9200
-#            required: true
+## This enables ingress (traefik from truecharts must be installed) and sets hostname
+#ingress:
+#  enabled: true
+#  type: "HTTP"
+#  hosts:
+#    - "opensearch.nas"
+  - variable: ingress
+    description: "OpenSearch Ingress"
+    label: "OpenSearch Ingress"
+    group: "OpenSearch Configuration"
+    schema:
+      type: dict
+      attrs:
+        - variable: enabled
+          schema:
+            type: bool
+            default: true
+            hidden: true
+        - variable: type
+          schema:
+            type: string
+            default: "HTTP"
+            hidden: true
+        - variable: hosts
+          schema:
+            type: list
+            items:
+              - variable: host
+                label: "FQDN for ingress"
+                schema:
+                  type: string
+
+## This disables the security, but the service will still use https protocol
+#extraEnvs:
+#  - name: plugins.security.disabled
+#    value: "true"
+  - variable: extraEnvs
+    description: "OpenSearch Environment Variables"
+    label: "OpenSearch Environment Variables"
+    group: "OpenSearch Configuration"
+    schema:
+      type: list
+      default: []
+      items:
+        - variable: extraEnv
+          label: "Environment Variable"
+          schema:
+            type: dict
+            attrs:
+            - variable: name
+              label: "Name"
+              schema:
+                type: string
+            - variable: value
+              label: "Name"
+              schema:
+                type: string

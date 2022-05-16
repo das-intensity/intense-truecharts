@@ -34,7 +34,7 @@ questions:
         - variable: enabled
           label: "Enable ingress"
           schema:
-            type: bool
+            type: boolean
             default: true
             hidden: true
         - variable: type
@@ -57,24 +57,24 @@ questions:
 #extraEnvs:
 #  - name: plugins.security.disabled
 #    value: "true"
-#  - variable: extraEnvs
-#    description: "OpenSearch Environment Variables"
-#    label: "OpenSearch Environment Variables"
-#    group: "OpenSearch Configuration"
-#    schema:
-#      type: list
-#      default: []
-#      items:
-#        - variable: extraEnv
-#          label: "Environment Variable"
-#          schema:
-#            type: dict
-#            attrs:
-#            - variable: name
-#              label: "Name"
-#              schema:
-#                type: string
-#            - variable: value
-#              label: "Name"
-#              schema:
-#                type: string
+  - variable: extraEnvs
+    description: "OpenSearch Environment Variables"
+    label: "OpenSearch Environment Variables"
+    group: "OpenSearch Configuration"
+    schema:
+      type: list
+      default: []
+      items:
+        - variable: extraEnv
+          label: "Environment Variable"
+          schema:
+            type: dict
+            attrs:
+            - variable: name
+              label: "Name"
+              schema:
+                type: string
+            - variable: value
+              label: "Name"
+              schema:
+                type: string

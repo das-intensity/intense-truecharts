@@ -53,19 +53,21 @@ questions:
                   attrs:
                     - variable: host
                       label: "FQDN for ingress"
-                      schema: 
+                      schema:
                         type: string
                         default: "https://opensearch-cluster-master.<opensearch-namespace>:9200"
                     - variable: paths
                       label: "Paths to match"
-                      schema: 
+                      schema:
                         type: list
                         items:
                           - variable: pathitem
+                            label: "Path list item"
                             schema:
                               type: dict
                               attrs:
                                 - variable: path
+                                  label: "Path to match"
                                   schema:
                                     type: string
                                     default: "/"

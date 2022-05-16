@@ -18,19 +18,27 @@ questions:
         - value: "Recreate"
           description: "Kill existing pods before creating new ones"
 
-  - variable: service
-    description: "OpenSearch Service Configuration"
-    label: "OpenSearch Service Configuration"
-    group: "OpenSearch Configuration"
-    schema:
-      type: dict
-      required: true
-      attrs:
-        - variable: nodePort
-          label: "Node Port to use for OpenSearch API"
-          schema:
-            type: int
-            min: 9000
-            max: 65535
-            default: 9200
-            required: true
+#  - variable: service
+#    description: "OpenSearch Service Configuration"
+#    label: "OpenSearch Service Configuration"
+#    group: "OpenSearch Configuration"
+#    schema:
+#      type: dict
+#      required: true
+#      attrs:
+#        - variable: nodePort
+#          label: "Node Port to use for OpenSearch API"
+#          schema:
+#            type: int
+#            min: 9000
+#            max: 65535
+#            default: 9200
+#            required: true
+#        - variable: nodePort
+#          label: "Node Port to use for OpenSearch API"
+#          schema:
+#            type: int
+#            min: 9000
+#            max: 65535
+#            default: 9200
+#            required: true

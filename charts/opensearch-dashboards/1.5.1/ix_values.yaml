@@ -4,6 +4,8 @@ ingress:
   type: "HTTP"
   hosts:
     - host: "opensearch-dash.nas"
+      paths:
+        - path: "/"
 
 # This disables the security, but the service will still use https protocol
 extraEnvs:

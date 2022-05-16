@@ -3,9 +3,9 @@ ingress:
   enabled: true
   type: "HTTP"
   hosts:
-    - "opensearch.nas"
+    - "opensearch-dash.nas"
 
 # This disables the security, but the service will still use https protocol
 extraEnvs:
-  - name: plugins.security.disabled
+  - name: DISABLE_SECURITY_DASHBOARDS_PLUGIN
     value: "true"

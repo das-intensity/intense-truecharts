@@ -6,7 +6,7 @@ ingress:
 
 extraEnvs:
   - name: plugins.security.disabled
-    value: true
+    value: "true"
 
 #service:
 #  type: NodePort

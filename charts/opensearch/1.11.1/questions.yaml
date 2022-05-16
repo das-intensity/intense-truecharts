@@ -52,8 +52,9 @@ questions:
                 label: "FQDN for ingress"
                 schema:
                   type: string
+                  default: "opensearch.local"
 
-## This disables the security, but the service will still use https protocol
+## This disables the security, but the ingress can still provide SSL if required
 #extraEnvs:
 #  - name: plugins.security.disabled
 #    value: "true"
@@ -63,7 +64,7 @@ questions:
     group: "OpenSearch Configuration"
     schema:
       type: list
-      default: []
+      default: [{"name": "plugins.security.disabled", "value": "true"}]
       items:
         - variable: extraEnv
           label: "Environment Variable"
@@ -75,6 +76,6 @@ questions:
               schema:
                 type: string
             - variable: value
-              label: "Name"
+              label: "Value"
               schema:
                 type: string

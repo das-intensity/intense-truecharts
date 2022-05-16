@@ -2,7 +2,7 @@ ingress:
   enabled: true
   type: "HTTP"
   hosts:
-    - host: "opensearch.nas"
+    - "opensearch.nas"
 
 extraEnvs:
   - name: plugins.security.disabled

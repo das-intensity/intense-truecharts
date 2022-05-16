@@ -18,23 +18,14 @@ questions:
 #        - value: "Recreate"
 #          description: "Kill existing pods before creating new ones"
 
-  - variable: namespace
-    description: "Namespace"
-    label: "Namespace"
-    group: "OpenSearch Configuration"
-    schema:
-      type: string
-      required: false
-      default: "opensearch"
-
   - variable: opensearchHosts
     description: "OpenSearch hosts to connect to (https://opensearch-cluster-master.<opensearch-namespace>:9200)"
     label: "OpenSearch Hosts"
     group: "OpenSearch Configuration"
     schema:
       type: string
-      required: false
-      default: "https://opensearch-cluster-master:9200"
+      required: true
+      default: "https://opensearch-cluster-master.<opensearch-namespace>:9200"
 
 #  - variable: service
 #    description: "OpenSearch Service Configuration"

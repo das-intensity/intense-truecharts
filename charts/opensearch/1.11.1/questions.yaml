@@ -32,16 +32,19 @@ questions:
       type: dict
       attrs:
         - variable: enabled
+          label: "Enable ingress"
           schema:
             type: bool
             default: true
             hidden: true
         - variable: type
+          label: "Ingress type"
           schema:
             type: string
             default: "HTTP"
             hidden: true
         - variable: hosts
+          label: "Hosts for ingress to match to"
           schema:
             type: list
             items:

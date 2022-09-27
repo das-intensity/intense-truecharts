@@ -6,13 +6,13 @@ groups:
 
 questions:
   - variable: opensearchHosts
-    description: "OpenSearch hosts to connect to (https://opensearch-cluster-master.<opensearch-namespace>:9200)"
+    description: "OpenSearch hosts to connect to (http://opensearch-cluster-master.<opensearch-namespace>:9200)"
     label: "OpenSearch Hosts"
     group: "OpenSearch Configuration"
     schema:
       type: string
       required: true
-      default: "https://opensearch-cluster-master.<opensearch-namespace>:9200"
+      default: "http://opensearch-cluster-master.<opensearch-namespace>:9200"
 
 ## This enables ingress (traefik from truecharts must be installed) and sets hostname
 #ingress:
@@ -55,7 +55,7 @@ questions:
                       label: "FQDN for ingress"
                       schema:
                         type: string
-                        default: "https://opensearch-cluster-master.<opensearch-namespace>:9200"
+                        default: "opensearch-dash.nas"
                     - variable: paths
                       label: "Paths to match"
                       schema:
